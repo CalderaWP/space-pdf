@@ -1,5 +1,29 @@
 @extends('layouts.app')
+<style>
+    .circle-icon {
+        background: #93af51;
+        color: #fff;
+        width: 100px;
+        height: 100px;
+        font-size: 2em !important;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 100px;
+        vertical-align: middle;
+        padding: 30px;
+    }
 
+
+    #features-container .row {
+        margin: 24px 0;
+        padding-bottom: 48px;
+    }
+
+    #main-features-row {
+        padding: 48px;
+        margin-bottom: 64px;
+    }
+</style>
 @section('content')
     <div style="width:100%" id="banner">
         <img src="//d1dy2qw4671tuy.cloudfront.net/images/space-banner.png" alt="caldera-space-banner" style="width: 100%;height: auto;"/>
@@ -24,15 +48,78 @@
     <div class="container">
         <div class="jumbotron">
             <h2>Your Form Submissions Capture As PDFs</h2>
-            <p>Caldera Forms email messages transformed into PDFs. Your site vistors want to download a PDF of their submission? We got you covered.</p>
+            <p><a href="https://calderawp.com/caldera-forms">Caldera Forms</a> is a powerful and intuitive, drag and drop form builder for WordPress. Make it more awesome with Caldera Forms PDF.</p>
+            <p>Caldera Forms email messages transformed into PDFs. Your site visitors want to download a PDF of their submission? We got you covered.</p>
         </div>
         <div class="jumbotron jumbotron-alt">
             <h2>No Drain On Your Server</h2>
             <p>Generating PDFs is a memory-intensive process. With Caldera Forms PDF, the PDF is generated in space (or the cloud) with no hit on your server.</p>
         </div>
         <div class="jumbotron">
-            <h2>Caldera Forms Is Awesome</h2>
-            <p><a href="https://calderawp.com/caldera-forms">Caldera Forms</a> is a powerful and intuitive, drag and drop form builder for WordPress. Make it more awesome with Caldera Forms PDF.</p>
+            <h2>Custom Styles and Templates</h2>
+            <em>Coming soon!</em>
+            <p>Add cuist</p>
+        </div>
+    </div>
+
+    <div class="container" id="features-container">
+        <div class="row" id="main-features-row">
+            <div class="col-md-4 col-sm-12">
+                <p class="center-block text-center">
+                    <i class="fa fa-envelope circle-icon" aria-hidden="true"></i>
+                </p>
+
+                <h2>Download</h2>
+                <p>Add a link to download form submission as a PDF</p>
+            </div>
+            <div class="col-md-4 col-sm-12">
+                <p class="center-block text-center">
+                    <i class="fa fa-envelope circle-icon" aria-hidden="true"></i>
+                </p>
+
+                <h2>Attach</h2>
+                <p>Attach the submission PDF to Caldera Forms email.</p>
+                <em>Coming soon</em>
+            </div>
+            <div class="col-md-4 col-sm-12">
+                <p class="center-block text-center">
+                    <i class="fa fa-print circle-icon" aria-hidden="true"></i>
+                </p>
+
+                <h2>Print</h2>
+                <p>Print-friendly downloads of your forms.</p>
+                <em>Coming soon</em>
+            </div>
+        </div>
+        <div class="row" id="secondary-features-row">
+
+            <div class="col-md-4 col-sm-12">
+                <p class="center-block text-center">
+                    <i class="fa fa-cloud circle-icon" aria-hidden="true"></i>
+                </p>
+
+                <h2>No Memory Drain</h2>
+                <p>PDF generating is memory intensive. Our cloud service doesn't consume resources on your servers.</p>
+            </div>
+            <div class="col-md-4 col-sm-12">
+                <p class="center-block text-center">
+                    <i class="fa fa-css3 circle-icon" aria-hidden="true"></i>
+                </p>
+
+                <h2>Custom Templates</h2>
+                <p>Make your PDFs stylish with custom templates.</p>
+                <em>Coming soon</em>
+            </div>
+            <div class="col-md-4 col-sm-12">
+                <p class="center-block text-center">
+                    <i class="fa fa-print circle-icon" aria-hidden="true"></i>
+                </p>
+
+                <h2>Print</h2>
+                <p>Print-friendly downloads of your forms.</p>
+                <em>Coming soon</em>
+            </div>
+
         </div>
     </div>
     <style>
@@ -171,7 +258,7 @@
                             </h3>
                             <div class="panel-body text-center">
                                 <p itemprop="price" class="lead" style="font-size:40px"><strong>
-                                        $/month
+                                        $5/month
                                     </strong></p>
                             </div>
                         </div>
@@ -180,7 +267,7 @@
                             <li class="list-group-item"><i class="icon-ok text-success"></i>Up To 1,000 PDFs A Month</li>
                         </ul>
                         <div class="panel-footer">
-                            <a href="/subscription/join" class="btn" style="width: 100%";>Sign Up</a>
+                            <a href="/subscription/join" class="btn" style="width: 100%">Sign Up</a>
                         </div>
 
                     </div>
@@ -214,6 +301,42 @@
                 <li><a class="btn btn-block" href="{{ url('/register') }}">Register</a></li>
             </ul></div></div>
 
+    </div>
+    <div class="container" id="faq-container">
+        <h2>FAQ</h2>
+        <div class="row">
+            <div class="col-sm-12 col-md-6">
+                <div class="faq-q">
+                    <h5>Is This A WordPress Plugin?</h5>
+                    <p>Caldera Forms PDF is a service. It requires <a href="https://calderawp.com/caldera-forms?utm_source=caldera-space&utm_medium=landing-page&utm_campaign=pdf">Caldera Forms</a>, and the <a href="https://github.com/CalderaWP/cf-pdf">Caldera Forms PDF client plugin</a>. Both are free.</p>
+                </div>
+                <div class="faq-q">
+                    <h5>Why Caldera Space?</h5>
+                    <p>This is the Caldera cloud, but in space... We thought it was funny.</p>
+                </div>
+                <div class="faq-q">
+                    <h5>Can I Create Custom Templates</h5>
+                    <p>Soon...</p>
+                </div>
+
+            </div>
+
+            <div class="col-sm-12 col-md-6">
+                <div class="faq-q">
+                    <h5>How Does Pricing Work?</h5>
+                    <p>Every time a PDF is generated, that counts as one PDF. The same PDF can be downloaded an unlimited time within the same 5 day period. After 5 days the PDF file is cleared, and a new one must be generated.</p>
+                </div>
+                <div class="faq-q">
+                    <h5>Who Makes Caldera Forms PDF?</h5>
+                    <p>Caldera Forms PDF is a product of <a href="http://calderalabs.org.com?utm_source=caldera-space&utm_medium=landing-page&utm_campaign=pdf">Caldera Labs</a> the makers of Caldera Forms.
+                </div>
+                <div class="faq-q">
+                    <h5>Can I Run This On My Own Server?</h5>
+                    <p>Yes. The PDF app is open-source Laravel app, licensed under the terms of the GNU AGPL. If you would like help setting up your own server, <a href="https://calderawp.com/caldera-space?utm_source=caldera-space&utm_medium=landing-page&utm_campaign=pdf">contact us.</a></p>
+                </div>
+            </div>
+
+        </div>
     </div>
 
 
