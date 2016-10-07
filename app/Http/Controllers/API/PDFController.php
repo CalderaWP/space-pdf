@@ -18,11 +18,11 @@ use Illuminate\Support\Facades\Storage;
 abstract class PDFController extends Controller{
 
 	/**
-	 * Disk to use for storing PDFs
+	 * Root for storage
 	 *
 	 * @var string
 	 */
-	protected $disk = 'public';
+	protected $disk = 'local';
 
 	/**
 	 * Check if we have a valiud PDFFile object representing a PDF that exists
@@ -138,14 +138,14 @@ abstract class PDFController extends Controller{
 	 */
 	protected function getFileName( PDFFile $PDFFile ) : string
 	{
-		$file_name = $PDFFile->license_id . '/' . $PDFFile->form_id . '/' . $PDFFile->entry_id . '/' . $PDFFile->name;
+		$file_name = 'pdfs/' . $PDFFile->license_id . '/' . $PDFFile->form_id . '/' . $PDFFile->entry_id . '/' . $PDFFile->name;
 
 		return $file_name;
 	}
 
 
 	protected function findLicenseByCode( string  $code ){
-		$license = new License();
+
 		$licenses = License::where( 'code', $code )->get();
 		if( 0 < $licenses->count() ){
 			$license = $licenses->first();
