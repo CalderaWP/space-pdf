@@ -25,7 +25,6 @@ class Subscription extends Controller
 		/** @var User $user */
 		$user = Auth::user();
 		try {
-
 			$subscription = $user->newSubscription( 'pdf', Input::get( 'plan' ) )->create( Input::get( 'payment_method_nonce' ), [
 				'email' => $user->email
 			] );
@@ -96,6 +95,13 @@ class Subscription extends Controller
 
 		return view('subscription-manage', ['subscriptions' => $subscriptions, 'code' => $code ]);
 
+	}
+
+	public function cancel()
+	{
+		/** @var User $user */
+		$user = Auth::user();
+		$user->subscription('pdf')->cancel();
 	}
 
 

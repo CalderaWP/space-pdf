@@ -31,5 +31,6 @@ Route::post(
 Route::group(['middleware' => 'auth'], function () {
 	Route::get( '/subscription', 'Subscription@manage' );
 	Route::get( '/subscription/join', 'Subscription@index' );
+	Route::get( '/subscription/cancel', 'Subscription@cancel' );
 	Route::post( '/subscription', 'Subscription@join' );
 });
