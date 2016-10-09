@@ -15,18 +15,26 @@ use Illuminate\Support\Facades\Input;
 
 class Subscription extends Controller
 {
+	/** @var User $user */
+	protected $user;
+
+	public function __construct()
+	{
+
+
+	}
+
 
 
 	public function join() {
-
+		$this->user = Auth::user();
 		$data = [
 			'paymentMethodNonce' => Input::get( 'payment_method_nonce' ),
 		];
-		/** @var User $user */
-		$user = Auth::user();
+
 		try {
-			$subscription = $user->newSubscription( 'pdf', Input::get( 'plan' ) )->create( Input::get( 'payment_method_nonce' ), [
-				'email' => $user->email
+			$subscription = $this->user->newSubscription( 'pdf', Input::get( 'plan' ) )->create( Input::get( 'payment_method_nonce' ), [
+				'email' => $this->user->email
 			] );
 		} catch ( \ Exception $e ) {
 			$message = $e->getMessage();
@@ -36,7 +44,7 @@ class Subscription extends Controller
 		}
 
 		$license_attrs = [
-			'user_id'         => $user->id,
+			'user_id'         => $this->user->id,
 			'code'            => str_random( 21 ),
 			'uses_month'      => 0,
 			'all_uses'        => 0,
@@ -65,7 +73,7 @@ class Subscription extends Controller
 	public function index()
 	{
 
-
+		$this->user = Auth::user();
 		$clientToken = ClientToken::generate();
 
 		return view('subscription-join', ['clientToken' => $clientToken ]);
@@ -73,9 +81,9 @@ class Subscription extends Controller
 
 	public function manage()
 	{
-		/** @var User $user */
-		$user = Auth::user();
-		$subscription = $user->subscription( 'pdf' );
+		$this->user = Auth::user();
+
+		$subscription = $this->user->subscription( 'pdf' );
 		if( $subscription ){
 			/** @var Collection $licenses */
 			$licenses = License::where( 'subscription_id', $subscription->id )->get();
@@ -99,14 +107,28 @@ class Subscription extends Controller
 
 	public function cancel()
 	{
-		/** @var User $user */
-		$user = Auth::user();
-		$user->subscription('pdf')->cancel();
+		$this->user = Auth::user();
+		$this->user->subscription('pdf')->cancel();
+		return redirect( '/subscription?success=true' );
+	}
+
+	public function invoices()
+	{
+		$this->user = Auth::user();
+		$invoices = $this->user->invoicesIncludingPending();
+
+	}
+	
+	public function invoice( $id )
+	{
+		$this->user = Auth::user();
+		return $this->user->downloadInvoice( $id, []);
 	}
 
 
 	protected function getLicense( $id )
 	{
+
 		return new License([ 'subscription_id' => $id ] );
 	}
 }
