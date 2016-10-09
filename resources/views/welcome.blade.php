@@ -23,44 +23,21 @@
         padding: 48px;
         margin-bottom: 64px;
     }
+    #header-wrap {
+        background-image: url( 'https://s3.amazonaws.com/caldera-theme/images/carina-nebula.jpg' );
+    }
 </style>
 @section('content')
-    <div style="width:100%" id="banner">
-        <img src="//d1dy2qw4671tuy.cloudfront.net/images/space-banner.png" alt="caldera-space-banner" style="width: 100%;height: auto;"/>
-    </div>
-    <div class="container">
+<div id="header-wrap">
 
-            <span class="symbol">
-                <img src="//d1dy2qw4671tuy.cloudfront.net/images/caldera-globe-logo-sm.png" alt="Caldera Labs Globe Logo" style="
-    width: 48px;
-    height: 48px;
-    margin-top: 16px;
-    margin-right: 12px;
-"/>
-            </span>
-            <span class="title" style="display: inline-block">
-                <h1>Caldera Forms PDF</h1>
-            </span>
-
-
-
-    </div>
-    <div class="container">
+    <header class="container">
         <div class="jumbotron">
-            <h2>Your Form Submissions Capture As PDFs</h2>
+            <h1>Caldera Forms PDF</h1>
             <p><a href="https://calderawp.com/caldera-forms">Caldera Forms</a> is a powerful and intuitive, drag and drop form builder for WordPress. Make it more awesome with Caldera Forms PDF.</p>
             <p>Caldera Forms email messages transformed into PDFs. Your site visitors want to download a PDF of their submission? We got you covered.</p>
         </div>
-        <div class="jumbotron jumbotron-alt">
-            <h2>No Drain On Your Server</h2>
-            <p>Generating PDFs is a memory-intensive process. With Caldera Forms PDF, the PDF is generated in space (or the cloud) with no hit on your server.</p>
-        </div>
-        <div class="jumbotron">
-            <h2>Custom Styles and Templates</h2>
-            <em>Coming soon!</em>
-            <p>Add cuist</p>
-        </div>
-    </div>
+    </header>
+</div>
 
     <div class="container" id="features-container">
         <div class="row" id="main-features-row">
@@ -112,12 +89,11 @@
             </div>
             <div class="col-md-4 col-sm-12">
                 <p class="center-block text-center">
-                    <i class="fa fa-print circle-icon" aria-hidden="true"></i>
+                    <i class="fa fa-space-shuttle circle-icon" aria-hidden="true"></i>
                 </p>
 
-                <h2>Print</h2>
-                <p>Print-friendly downloads of your forms.</p>
-                <em>Coming soon</em>
+                <h2>Easy & Fast</h2>
+                <p>Simple setup from right inside of Caldera Forms.</p>
             </div>
 
         </div>
