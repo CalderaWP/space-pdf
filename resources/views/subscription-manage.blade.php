@@ -46,6 +46,22 @@ use Collective\Html\HtmlFacade as HTML;
                                         Code: <pre style="text-align: center">{{ $code }}</pre>
                                     </div>
                                 </div>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <ul class="list-inline">
+                                            <li>
+                                                <a href="https://wordpress.org/plugins/caldera-forms-pdf">
+                                                    <i class="fa fa-wordpress" aria-hidden="true"></i>Client Plugin
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://calderawp.com/doc/caldera-forms-pdf-getting-started/">
+                                                    <i class="fa fa-book" aria-hidden="true"></i>Documentation
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
 
 
