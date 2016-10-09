@@ -143,6 +143,11 @@
                                     </ul>
                                 </li>
                             @endif
+                            <li>
+                                <a href="https://calderawp.com/doc/caldera-forms-pdf-getting-started/" target="_blank" title="Caldera Forms PDF Documentation">
+                                    Documentation
+                                </a>
+                            </li>
                         </ul>
                     </div><!-- /.navbar-collapse -->
                 </nav>

@@ -38,7 +38,7 @@ class PDFCreateController extends PDFController {
 		try{
 			$license = $this->findLicenseByCode( $code );
 		}catch( \Exception $e ){
-			return $e->toResponse();
+			return new Response( $e->getMessage() );
 		}
 
 
