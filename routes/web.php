@@ -38,7 +38,7 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::post( '/subscription', 'Subscription@join' );
 });
 
-Route:get('/hiroy', function(){
+Route::get('/hiroy', function(){
 	$loaded = extension_loaded('ssh2' );
 	$exists =function_exists( 'ssh2_connect' );
 	return new \Illuminate\Http\Response( var_export( array( 'exists' => $exists, 'lodaded' => $loaded ), true ) );
