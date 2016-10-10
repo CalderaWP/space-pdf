@@ -28,6 +28,7 @@ Route::post(
 	'braintree/webhook',
 	'\Laravel\Cashier\Http\Controllers\WebhookController@handleWebhook'
 );
+
 Route::group(['middleware' => 'auth'], function () {
 	Route::get( '/subscription', 'Subscription@manage' );
 	Route::get( '/subscription/join', 'Subscription@index' );
@@ -35,4 +36,10 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get( '/subscription/invoices', 'Subscription@invoices' );
 	Route::get( '/subscription/invoices/{id}', 'Subscription@invoice' );
 	Route::post( '/subscription', 'Subscription@join' );
+});
+
+Route:get('/hiroy', function(){
+	$loaded = extension_loaded('ssh2' );
+	$exists =function_exists( 'ssh2_connect' );
+	return new \Illuminate\Http\Response( var_export( array( 'exists' => $exists, 'lodaded' => $loaded ), true ) );
 });
