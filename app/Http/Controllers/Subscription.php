@@ -129,7 +129,7 @@ class Subscription extends Controller
 	{
 		$this->user = Auth::user();
 		$invoices = $this->user->invoicesIncludingPending();
-
+		return view( 'invoices', [ 'invoices' => $invoices ] );
 	}
 	
 	public function invoice( $id )

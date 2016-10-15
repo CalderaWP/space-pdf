@@ -46,3 +46,8 @@ Route::get('/hiroy', function(){
 	$exists =function_exists( 'ssh2_connect' );
 	return new \Illuminate\Http\Response( var_export( array( 'exists' => $exists, 'lodaded' => $loaded ), true ) );
 });
+
+
+Route::get( 'manage/subscriptions', 'Manage\Subscriptions@all' );
+Route::get( 'manage/users', 'Manage\Users@all' );
+Route::get( 'manage/', 'Manage\Manage@links' );
