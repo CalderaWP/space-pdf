@@ -20,10 +20,13 @@ use \Illuminate\Support\Facades\Input;
 
         {!! Form::open(['url' => 'subscription', 'method' => 'post', 'id' => 'checkout'])!!}
 
-        <label for="plan">
-           Choose Plan
-        </label>
         <div class="row">
+            <label for="plan">
+                Choose Plan
+            </label>
+        </div>
+        <div class="row">
+
             <div class="col-md-9 col-sm-12">
                 <select name="plan" id="plan" class="form-control">
                     <option value="caldera-space-pdf-one" data-price="5.00">
@@ -36,6 +39,11 @@ use \Illuminate\Support\Facades\Input;
             </div>
             <div id="price-display" class="col-md-3 col-sm-12">
                 $5.00/month
+            </div>
+        </div>
+        <div class="row" style="padding:12px 0;">
+            <div  class="col-sm-12">
+                <p>Have a higher traffic site? <a href="https://CalderaWP.com/contact">Get in touch </a> and we can talk options.</p>
             </div>
         </div>
         <div class="row">

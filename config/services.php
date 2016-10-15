@@ -1,6 +1,6 @@
 <?php
 
-return [
+$config =  [
 
     /*
     |--------------------------------------------------------------------------
@@ -46,3 +46,15 @@ return [
 	    'private_key' => env('BRAINTREE_PRIVATE_KEY'),
     ],
 ];
+
+if( 'sandbox' == $config[ 'braintree' ][ 'environment' ] ){
+	$config[ 'braintree' ][ 'merchant_id' ] = env( 'BRAINTREE_MERCHANT_ID_SANDBOX' );
+	$config[ 'braintree' ][ 'public_key' ] = env( 'BRAINTREE_PUBLIC_KEY_SANDBOX' );
+	$config[ 'braintree' ][ 'private_key' ] = env( 'BRAINTREE_PRIVATE_KEY_SANDBOX' );
+}else{
+	$config[ 'braintree' ][ 'merchant_id' ] = env( 'BRAINTREE_MERCHANT_ID' );
+	$config[ 'braintree' ][ 'public_key' ] = env( 'BRAINTREE_PUBLIC_KEY' );
+	$config[ 'braintree' ][ 'private_key' ] = env( 'BRAINTREE_PRIVATE_KEY' );
+}
+
+return $config;
