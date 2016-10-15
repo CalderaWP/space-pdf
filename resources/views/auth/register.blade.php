@@ -1,25 +1,6 @@
 @extends('layouts.app')
 
-@section( 'content' )
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <div class="panel panel-default">
-                    <div class="panel-heading">We are not ready to launch just yet...</div>
-                    <div class="panel-body">
-                        <a href="http://calderawp.us10.list-manage.com/subscribe?u=e8aeee202b02c1fe9eab2037c&id=f402a6993d" class="">
-                            Subscribe to our mailing list to be alerted when we are ready to go to space.
-                        </a>
-                        <img src="//calderawp.github.io/images/you-will-not-go-to-space-today-01.jpg" style="width: 100%;height: auto;"/>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-@endsection
-@section('content--')
+@section('content')
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
