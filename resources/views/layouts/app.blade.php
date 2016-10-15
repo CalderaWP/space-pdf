@@ -111,7 +111,7 @@
                         </button>
                         <a href="https://Caldera.space" class="logo  navbar-brand">
                             <span class="symbol"><img src="//d1dy2qw4671tuy.cloudfront.net/images/caldera-globe-logo-sm.png" class="img-responsive" alt="Caldera Labs Globe Logo"></span>
-                            <span class="title">Caldera Space</span>
+                            <span class="title">Caldera Forms PDF</span>
                         </a>
                     </div>
 
@@ -139,6 +139,11 @@
                                             <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
                                                 {{ csrf_field() }}
                                             </form>
+                                        </li>
+                                        <li>
+                                            <a href="{{ url( '/subscription') }}">
+                                                Manage Subscription
+                                            </a>
                                         </li>
                                     </ul>
                                 </li>
