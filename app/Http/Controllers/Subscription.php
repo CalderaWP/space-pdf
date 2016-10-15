@@ -84,7 +84,7 @@ class Subscription extends Controller
 		$this->user = Auth::user();
 
 		$subscription = $this->getSubscription();
-		if( $subscription ){
+		if( $subscription && ! $this->cancelled( $subscription ) ){
 			/** @var Collection $licenses */
 			$licenses = $this->getLicense( $subscription );
 			if( 0 < $licenses->count() ){
@@ -108,13 +108,19 @@ class Subscription extends Controller
 	public function cancel()
 	{
 		$this->user = Auth::user();
-		$licenses = $this->getLicense( $this->getSubscription() );
+
+		$subscription =  $this->user->subscription('pdf')->cancel();
+		if( ! $this->cancelled( $subscription ) ){
+			return redirect( '/subscription?success=false' );
+		}
+		$licenses = $this->getLicenseBySubscription( $subscription );
+
 		if( 0 < $licenses->count() ){
 			foreach ( $licenses as $license ){
 				$license->destroy( $license->id );
 			}
 		}
-		$this->user->subscription('pdf')->cancel();
+
 
 		return redirect( '/subscription?success=true' );
 	}
@@ -151,11 +157,20 @@ class Subscription extends Controller
 	/**
 	 * @param $subscription
 	 *
-	 * @return mixed
+	 * @return License
 	 */
-	protected function getLicense( $subscription ) {
+	protected function getLicenseBySubscription( $subscription ) {
 		$licenses = License::where( 'subscription_id', $subscription->id )->get();
 
 		return $licenses;
+	}
+
+	protected  function cancelled( \Laravel\Cashier\Subscription $subscription) :bool
+	{
+		if(  $subscription->cancelled() || strtotime( $subscription->ends_at ) < time() ){
+			return true;
+		}
+
+		return false;
 	}
 }
