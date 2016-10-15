@@ -39,7 +39,7 @@ class Subscription extends Controller
 		} catch ( \ Exception $e ) {
 			$message = $e->getMessage();
 
-			return redirect( '/subscription?success=false&message=' . urlencode( $message ) );
+			return redirect( '/subscription/join?success=false&message=' . urlencode( $message ) );
 
 		}
 
@@ -83,10 +83,10 @@ class Subscription extends Controller
 	{
 		$this->user = Auth::user();
 
-		$subscription = $this->user->subscription( 'pdf' );
+		$subscription = $this->getSubscription();
 		if( $subscription ){
 			/** @var Collection $licenses */
-			$licenses = License::where( 'subscription_id', $subscription->id )->get();
+			$licenses = $this->getLicense( $subscription );
 			if( 0 < $licenses->count() ){
 				$license = $licenses->first();
 				$code = $license->code;
@@ -108,7 +108,14 @@ class Subscription extends Controller
 	public function cancel()
 	{
 		$this->user = Auth::user();
+		$licenses = $this->getLicense( $this->getSubscription() );
+		if( 0 < $licenses->count() ){
+			foreach ( $licenses as $license ){
+				$license->destroy( $license->id );
+			}
+		}
 		$this->user->subscription('pdf')->cancel();
+
 		return redirect( '/subscription?success=true' );
 	}
 
@@ -130,5 +137,25 @@ class Subscription extends Controller
 	{
 
 		return new License([ 'subscription_id' => $id ] );
+	}
+
+	/**
+	 * @return \Laravel\Cashier\Subscription|null
+	 */
+	protected function getSubscription() {
+		$subscription = $this->user->subscription( 'pdf' );
+
+		return $subscription;
+	}
+
+	/**
+	 * @param $subscription
+	 *
+	 * @return mixed
+	 */
+	protected function getLicense( $subscription ) {
+		$licenses = License::where( 'subscription_id', $subscription->id )->get();
+
+		return $licenses;
 	}
 }
