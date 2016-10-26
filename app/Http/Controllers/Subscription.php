@@ -10,11 +10,14 @@ use Braintree\ClientToken;
 use App\Http\Requests;
 use Illuminate\Auth\Access\Response;
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Input;
 
 class Subscription extends Controller
 {
+	use \App\Http\manage;
+
 	/** @var User $user */
 	protected $user;
 
@@ -81,7 +84,10 @@ class Subscription extends Controller
 
 	public function manage()
 	{
+
 		$this->user = Auth::user();
+
+
 
 		$subscription = $this->getSubscription();
 		if( $subscription && ! $this->cancelled( $subscription ) ){
@@ -167,7 +173,7 @@ class Subscription extends Controller
 
 	protected  function cancelled( \Laravel\Cashier\Subscription $subscription) :bool
 	{
-		if(  $subscription->cancelled() || strtotime( $subscription->ends_at ) < time() ){
+		if(  $subscription->cancelled() ){
 			return true;
 		}
 
