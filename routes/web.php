@@ -51,3 +51,5 @@ Route::get('/hiroy', function(){
 Route::get( 'manage/subscriptions', 'Manage\Subscriptions@all' );
 Route::get( 'manage/users', 'Manage\Users@all' );
 Route::get( 'manage/', 'Manage\Manage@links' );
+Route::get( 'manage/switch/{id}', 'Manage\UserSwitch@start' );
+Route::get( 'manage/switch/stop', 'Manage\UserSwitch@start' );
