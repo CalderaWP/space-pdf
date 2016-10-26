@@ -18,9 +18,7 @@ class UserSwitch extends Manage{
 
 	public function start( $new_user )
 	{
-		if( ! $this->canManage() ){
-			exit;
-		}
+		$this->check();
 		$new_user = User::find( $new_user );
 		Session::put( 'orig_user', Auth::id() );
 		Auth::login( $new_user );
@@ -29,6 +27,7 @@ class UserSwitch extends Manage{
 
 	public function stop()
 	{
+		$this->check();
 		$id = Session::pull( 'orig_user' );
 		$orig_user = User::find( $id );
 		Auth::login( $orig_user );

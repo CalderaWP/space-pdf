@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Auth;
 
 trait manage {
 
-	protected $ids = [1];
+	protected $ids = [1,3];
 
 	public function canManage() :bool
 	{

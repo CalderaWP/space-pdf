@@ -14,6 +14,7 @@ use App\Http\Controllers\Controller;
 class Manage  extends Controller {
 	use \App\Http\manage;
 
+
 	/**
 	 * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector|void
 	 */
