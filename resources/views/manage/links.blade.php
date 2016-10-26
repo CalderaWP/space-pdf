@@ -27,6 +27,9 @@ use \Illuminate\Support\Facades\Input;
                                         Subscriptions
                                     </a>
                                 </li>
+                                <li>
+                                    You can use <em>caldera.space/manage/switch/{user-id}</em> to switch to a user and <em>caldera.space/manage/switch/stop</em> to switch back.
+                                </li>
                             </ul>
                         </div>
                     </div>

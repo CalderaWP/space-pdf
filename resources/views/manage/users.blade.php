@@ -21,6 +21,9 @@ use \Illuminate\Support\Facades\Input;
                     <div class="row">
 
                         <div class=" col-sm-12">
+                            <p style="margin-top:48px"> You can use <em>caldera.space/manage/switch/{user-id}</em> to switch to a user and <em>caldera.space/manage/switch/stop</em>
+                                to switch back.
+                            </p>
                             @if (count( $users) > 0)
 
 
