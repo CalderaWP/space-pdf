@@ -54,3 +54,6 @@ Route::get('/hiroy', function(){
 });
 
 
+Route::get( 'wp/plugins/{slug}', 'Plugin@downloads' );
+
+

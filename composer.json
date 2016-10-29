@@ -11,7 +11,9 @@
         "laravel/cashier-braintree": "~2.0",
         "laravelcollective/html": "^5.2.0",
         "dompdf/dompdf": "*",
-        "arcanedev/log-viewer": "~4.0"
+        "arcanedev/log-viewer": "~4.0",
+        "markrogoyski/math-php": "^0.13.0",
+        "consoletvs/charts": "^2.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
