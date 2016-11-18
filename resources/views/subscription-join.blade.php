@@ -1,5 +1,4 @@
 <?php
-use Collective\Html\HtmlFacade as HTML;
 use \Illuminate\Support\Facades\Input;
 ?>
 @extends('layouts.app')
@@ -100,10 +99,8 @@ use \Illuminate\Support\Facades\Input;
         {!! Form::close() !!}
     </div>
     <script src="https://js.braintreegateway.com/v2/braintree.js"></script>
-    <!-- Load the required client component. -->
 
     <script>
-        var colorTransition = 'color 100ms ease-out';
         var url = "<?php echo url('subscription' ); ?>";
         var paypalEl = document.getElementById( 'paypal' );
 

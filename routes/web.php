@@ -44,6 +44,9 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get( 'manage/', 'Manage\Manage@links' );
 	Route::get( 'manage/switch/{id}', 'Manage\UserSwitch@start' );
 	Route::get( 'manage/switch/stop', 'Manage\UserSwitch@stop' );
+	Route::post('/support/send', 'Support@send');
+
+	Route::get('/support', 'Support@form');
 
 });
 
@@ -55,5 +58,4 @@ Route::get('/hiroy', function(){
 
 
 Route::get( 'wp/plugins/{slug}', 'Plugin@downloads' );
-
 

@@ -149,6 +149,11 @@
                                                 Manage Subscription
                                             </a>
                                         </li>
+                                        <li>
+                                            <a href="{{ url( '/support') }}">
+                                               Support
+                                            </a>
+                                        </li>
                                     </ul>
                                 </li>
                             @endif
