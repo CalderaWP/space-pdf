@@ -47,6 +47,7 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::post('/support/send', 'Support@send');
 
 	Route::get('/support', 'Support@form');
+	Route::get('/support/thanks', 'Support@thanks');
 
 });
 

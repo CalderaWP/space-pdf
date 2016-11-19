@@ -3,9 +3,7 @@ use Collective\Html\FormFacade as Form;
 
 use Collective\Html\HtmlFacade as HTML;
 ?>
-<style>
-    inputb
-</style>
+
 @extends('layouts.app')
 
 @section('content')
@@ -17,6 +15,11 @@ use Collective\Html\HtmlFacade as HTML;
                     <div class="panel-heading">Open A Support Ticket</div>
 
                     <div class="panel-body">
+                        <div class="row">
+                            <p>
+                                Please use this form for Caldera Forms PDF support only. If you need support for Caldera Forms or a Caldera Forms add-on, please use <a href="https://CalderaWP.com/support">CalderaWP.com/support</a>
+                            </p>
+                        </div>
                         <div class="row">
                             <div class="col-sm-12 col-md-6">
                                 <label for="name">

@@ -52,15 +52,20 @@ class Support extends Controller
 
 		});
 
-		return response()->json(['message' => 'Request completed']);
+		return redirect( '/support/thanks' );
 	}
 
 	public function form()
 	{
 		$user = Auth::user();
-		return view( 'support', [
+		return view( 'support.request', [
 			'email' => $user->email,
 			'name' => $user->name
 		] );
+	}
+
+	public function thanks()
+	{
+		return view( 'support.thanks', [] );
 	}
 }
