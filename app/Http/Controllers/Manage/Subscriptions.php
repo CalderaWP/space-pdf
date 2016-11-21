@@ -16,7 +16,10 @@ class Subscriptions extends \App\Http\Controllers\Manage\Manage
 
 	public function all()
 	{
-		$this->check();
+		if( ! $this->canManage() ){
+			return redirect( 'login' );
+		}
+
 		$subscriptions = Subscription::all();
 
 		return view( 'manage.subscriptions', [ 'subscriptions' => $this->prepareSubscriptions( $subscriptions ) ]);
@@ -24,6 +27,7 @@ class Subscriptions extends \App\Http\Controllers\Manage\Manage
 
 	protected function prepareSubscriptions( Collection $subscriptions ) :array
 	{
+
 		$data = [];
 		if( 0 < $subscriptions->count() ){
 			foreach ($subscriptions  as $subscription ){

@@ -12,7 +12,10 @@ use App\Http\Requests;
 class Users extends Manage {
 
 	public function all() {
-		$this->check();
+		if( ! $this->canManage() ){
+			return redirect( 'login' );
+		}
+
 
 		$users = User::all();
 

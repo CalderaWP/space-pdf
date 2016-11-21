@@ -28,7 +28,9 @@ class Manage  extends Controller {
 
 	public function links()
 	{
-		$this->check();
+		if( ! $this->canManage() ){
+			return redirect( 'login' );
+		}
 		return view( 'manage.links' );
 	}
 
