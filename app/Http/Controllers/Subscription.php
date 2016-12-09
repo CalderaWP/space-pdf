@@ -48,7 +48,7 @@ class Subscription extends Controller
 
 		$license_attrs = [
 			'user_id'         => $this->user->id,
-			'code'            => str_random( 21 ),
+			'code'            => $this->generateCode(),
 			'uses_month'      => 0,
 			'all_uses'        => 0,
 			'subscription_id' => $subscription->id,

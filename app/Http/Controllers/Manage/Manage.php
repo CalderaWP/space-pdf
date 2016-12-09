@@ -10,6 +10,8 @@ namespace App\Http\Controllers\Manage;
 
 
 use App\Http\Controllers\Controller;
+use App\License;
+use App\User;
 
 class Manage  extends Controller {
 	use \App\Http\manage;
@@ -34,4 +36,10 @@ class Manage  extends Controller {
 		return view( 'manage.links' );
 	}
 
+	public function give( $id ){
+		$license = new License([ 'subscription_id' => 'x' . $id, 'code' => $this->generateCode() ] );
+		$license->save();
+		var_dump( $license->code );
+		exit;
+	}
 }

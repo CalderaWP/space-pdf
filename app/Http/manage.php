@@ -25,4 +25,9 @@ trait manage {
 		return false;
 	}
 
+	protected function generateCode() : string
+	{
+		return str_random( 21 );
+	}
+
 }
