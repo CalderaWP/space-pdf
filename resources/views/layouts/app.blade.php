@@ -185,7 +185,7 @@
                             <li><a href="https://CalderaForms.com" class="ft-space">Caldera Forms</a></li>
                             <li><a href="http://CalderaLabs.org" class="ft-space">Caldera Labs</a></li>
                             <li><a href="https://IngotHQ.com" class="ft-space">Ingot</a></li>
-                            <li><a href="http://CalderaWP.com/contact" class="ft-space">Contact</a></li>
+                            <li><a href="https://calderaforms.com/contact" class="ft-space">Contact</a></li>
 
                         </ul>
                     </div>
@@ -195,7 +195,7 @@
                             <li><a href="https://Facebook.com/https://Twitter.com/CalderaWP" class="fa fa-facebook"><span class="screen-reader-text">Facebook</span> </a></li>
                             <li><a href="https://www.youtube.com/playlist?list=PLgeaHmX3MoiuXOhRlDdYn7k0RcL4afLzQ" class="fa fa-youtube"><span class="screen-reader-text">YouTube</span> </a></li>
                             <li><a href="https://Github.com/CalderaWP" class="fa fa-github"></a><span class="screen-reader-text">Github</span> </li>
-                            <li><a href=http://CalderaWP.com/contact" class="fa fa-envelope-o"><span class="screen-reader-text">Contact</span> </a></li>
+                            <li><a href=https://Calderaforms.com/contact" class="fa fa-envelope-o"><span class="screen-reader-text">Contact</span> </a></li>
                         </ul>
                     </div>
                 </div>
