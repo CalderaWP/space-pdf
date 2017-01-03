@@ -304,7 +304,7 @@
                 </div>
                 <div class="faq-q">
                     <h5>Who Makes Caldera Forms PDF?</h5>
-                    <p>Caldera Forms PDF is a product of <a href="http://calderalabs.org.com?utm_source=caldera-space&utm_medium=landing-page&utm_campaign=pdf">Caldera Labs</a> the makers of Caldera Forms.
+                    <p>Caldera Forms PDF is a product of <a href="http://calderalabs.org?utm_source=caldera-space&utm_medium=landing-page&utm_campaign=pdf">Caldera Labs</a> the makers of Caldera Forms.
                 </div>
                 <div class="faq-q">
                     <h5>Can I Run This On My Own Server?</h5>
