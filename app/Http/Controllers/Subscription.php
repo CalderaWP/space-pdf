@@ -149,7 +149,8 @@ class Subscription extends Controller
 			'location' => 'Tallahassee, FL 323303',
 			'url' => 'CalderaLabs.org',
 			'vat' => false,
-			'user' => $this->user
+			'user' => $this->user,
+			'product' => 'Caldera Forms PDF Service'
 		] );
 		if( ! $invoice ) {
 			echo "Invoice could not be found";
