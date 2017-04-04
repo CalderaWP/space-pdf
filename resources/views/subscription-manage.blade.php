@@ -61,7 +61,7 @@ use Collective\Html\HtmlFacade as HTML;
                                             </li>
                                             <li>
                                                 <a href="{{ url( '/subscription/invoices') }}">
-                                                    <i class="fa fa fa-envelope-open-o" aria-hidden="true"></i>Invoices
+                                                    <i class="fa fa-envelope" aria-hidden="true"></i>Invoices
                                                 </a>
                                             </li>
                                         </ul>
