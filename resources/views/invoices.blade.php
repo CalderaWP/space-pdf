@@ -23,11 +23,15 @@ use \Illuminate\Support\Facades\Input;
         <div class="row">
 
             <div class=" col-sm-12">
-                @forelse ($invoices as $invoice)
-
-                @empty
-                    <p>No invoices found</p>
-                @endforelse
+                <table>
+                    @foreach ($invoices as $invoice)
+                        <tr>
+                            <td>{{ $invoice->date()->toFormattedDateString() }}</td>
+                            <td>{{ $invoice->total() }}</td>
+                            <td><a href="/subscription/invoices/{{ $invoice->id }}">Download</a></td>
+                        </tr>
+                    @endforeach
+                </table>
             </div>
         </div>
 
