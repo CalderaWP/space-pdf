@@ -63,7 +63,7 @@ Route::get('/hiroy', function(){
 
 Route::get( 'wp/plugins/{slug}', 'Plugin@downloads' );
 
-Route:get( '/manage/in', function(){
+Route::get( '/manage/in', function(){
 	$user = Auth::user();
 	if( 1 == $user->id ){
 		return false;
