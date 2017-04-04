@@ -145,7 +145,7 @@ class Subscription extends Controller
 
 		return $invoice->view( [
 			'vendor' => 'Caldera Labs',
-			'street' => '2380 gregory Dr.',
+			'street' => '2380 Gregory Dr.',
 			'location' => 'Tallahassee, FL 323303',
 			'url' => 'CalderaLabs.org',
 			'vat' => false,

@@ -55,8 +55,13 @@ use Collective\Html\HtmlFacade as HTML;
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="https://calderawp.com/doc/caldera-forms-pdf-getting-started/">
+                                                <a href="https://calderaforms.com/doc/caldera-forms-pdf-getting-started/">
                                                     <i class="fa fa-book" aria-hidden="true"></i>Documentation
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="{{ url( '/subscription/invoices') }}">
+                                                    <i class="fa fa fa-envelope-open-o" aria-hidden="true"></i>Invoices
                                                 </a>
                                             </li>
                                         </ul>

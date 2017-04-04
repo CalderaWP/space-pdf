@@ -150,6 +150,11 @@
                                             </a>
                                         </li>
                                         <li>
+                                            <a href="{{ url( '/subscription/invoices') }}">
+                                                Invoices
+                                            </a>
+                                        </li>
+                                        <li>
                                             <a href="{{ url( '/support') }}">
                                                Support
                                             </a>
