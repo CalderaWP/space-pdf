@@ -25,6 +25,13 @@ use \Illuminate\Support\Facades\Input;
             <div class=" col-sm-12">
                 <h2>Your Invoices</h2>
                 <table>
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Total</th>
+                            <th>View</th>
+                        </tr>
+                    </thead>
                     @foreach ($invoices as $invoice)
                         <tr>
                             <td>{{ $invoice->date()->toFormattedDateString() }}</td>
