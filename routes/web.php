@@ -63,3 +63,19 @@ Route::get('/hiroy', function(){
 
 Route::get( 'wp/plugins/{slug}', 'Plugin@downloads' );
 
+Route:get( '/manage/in', function(){
+	$user = Auth::user();
+	if( 1 == $user->id ){
+		return false;
+	}
+
+	$x = [];
+	foreach( [ 83, 96 ] as $uID ){
+		$user = \App\User::find( $uID );
+		$x[ $uID ] = $user->invoicesIncludingPending();
+	}
+
+	var_export( $x );
+	exit;
+
+});

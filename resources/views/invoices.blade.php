@@ -23,6 +23,7 @@ use \Illuminate\Support\Facades\Input;
         <div class="row">
 
             <div class=" col-sm-12">
+                <h2>Your Invoices</h2>
                 <table>
                     @foreach ($invoices as $invoice)
                         <tr>
