@@ -143,7 +143,14 @@ class Subscription extends Controller
 		$owner = $this->user = Auth::user();
 		$invoice = $this->user->findInvoice( $id );
 
-		return $invoice->view( [] );
+		return $invoice->view( [
+			'vendor' => 'Caldera Labs',
+			'street' => '2380 gregory Dr.',
+			'location' => 'Tallahassee, FL 323303',
+			'url' => 'CalderaLabs.org',
+			'vat' => false,
+			'user' => $this->user
+		] );
 		if( ! $invoice ) {
 			echo "Invoice could not be found";
 			exit;
