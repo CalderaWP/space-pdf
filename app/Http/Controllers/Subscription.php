@@ -143,6 +143,7 @@ class Subscription extends Controller
 		$owner = $this->user = Auth::user();
 		$invoice = $this->user->findInvoice( $id );
 
+		return $invoice->view( [] );
 		if( ! $invoice ) {
 			echo "Invoice could not be found";
 			exit;
