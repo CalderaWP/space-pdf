@@ -140,8 +140,19 @@ class Subscription extends Controller
 	
 	public function invoice( $id )
 	{
-		$this->user = Auth::user();
-		return $this->user->downloadInvoice( $id, []);
+		$owner = $this->user = Auth::user();
+		$invoice = $this->user->findInvoice( $id );
+		if( ! $invoice ) {
+			echo "Invoice could not be found";
+			exit;
+		}
+		$subscription = $this->getSubscription();
+		return view( 'invoice', [
+			'owner' => $owner,
+			'subscription' => $subscription
+		]);
+
+
 	}
 
 
