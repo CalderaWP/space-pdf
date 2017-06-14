@@ -40,6 +40,7 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get( '/subscription/invoices/{id}', 'Subscription@invoice' );
 	Route::post( '/subscription', 'Subscription@join' );
 	Route::get( 'manage/subscriptions', 'Manage\Subscriptions@all' );
+	Route::get( 'manage/subscriptions/download', 'Manage\Subscriptions@download' );
 	Route::get( 'manage/users', 'Manage\Users@all' );
 	Route::get( 'manage/give/license/{id}', 'Manage\Users@give' );
 

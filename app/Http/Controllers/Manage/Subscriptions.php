@@ -14,6 +14,8 @@ use Laravel\Cashier\Subscription;
 class Subscriptions extends \App\Http\Controllers\Manage\Manage
 {
 
+	protected $downloadData;
+
 	public function all()
 	{
 		if( ! $this->canManage() ){
@@ -48,5 +50,25 @@ class Subscriptions extends \App\Http\Controllers\Manage\Manage
 			$data[ 'user' ] = [ 'id' => 0 ];
 		}
 		return (object) $data;
+	}
+
+	public function download()
+	{
+		$subscriptions = Subscription::all();
+		$subscriptions->each( function( Subscription $sub, $i ){
+			$this->downloadData[ $i ] = $sub->toArray();
+			$this->downloadData[ $i ][ 'active' ] = $sub->active();
+			$this->downloadData[ $i ][ 'canceled' ] = $sub->cancelled();
+			$user = User::find( $sub->id );
+			if ( $user ) {
+				$this->downloadData[ $i ][ 'email' ] = $user->email;
+			}else{
+				$this->downloadData[ $i ][ 'email' ] = '';
+
+			}
+		} );
+
+		return response()->json($this->downloadData );
+
 	}
 }

@@ -87,8 +87,6 @@ class Subscription extends Controller
 
 		$this->user = Auth::user();
 
-
-
 		$subscription = $this->getSubscription();
 		if( $subscription && ! $this->cancelled( $subscription ) ){
 			/** @var Collection $licenses */

@@ -8,8 +8,12 @@ use App\User;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Illuminate\Http\Response;
+use Illuminate\Support\Collection;
 
 class Users extends Manage {
+
+	protected $downloadData;
 
 	public function all() {
 		if( ! $this->canManage() ){
@@ -21,4 +25,6 @@ class Users extends Manage {
 
 		return view( 'manage.users', [ 'users' => $users] );
 	}
+
+
 }
