@@ -33,10 +33,16 @@
     <header class="container">
         <div class="jumbotron">
             <h1>Caldera Forms PDF</h1>
-            <p><a href="https://calderawp.com/caldera-forms">Caldera Forms</a> is a powerful and intuitive, drag and drop form builder for WordPress. Make it more awesome with Caldera Forms PDF.</p>
+            <p><a href="https://calderaforms.com/">Caldera Forms</a> is a powerful and intuitive, drag and drop form builder for WordPress. Make it more awesome with Caldera Forms PDF.</p>
             <p>Caldera Forms email messages transformed into PDFs. Your site visitors want to download a PDF of their submission? We got you covered.</p>
         </div>
     </header>
+</div>
+
+<div class="container">
+    <p class="alert alert-danger">
+        <a href="https://calderaforms.com/pro?utm_source=caldera-space">Caldera Forms Pro</a> is here! Caldera Forms to PDF services are now offered by Caldera Forms Pro and are way better! Existing users of Caldera Forms Pro have received a special cross-grade offer.
+    </p>
 </div>
 
     <div class="container" id="features-container">
@@ -243,7 +249,7 @@
                             <li class="list-group-item"><i class="icon-ok text-success"></i>Up To 1,000 PDFs A Month</li>
                         </ul>
                         <div class="panel-footer">
-                            <a href="/subscription/join" class="btn" style="width: 100%">Sign Up</a>
+                            <a href="https://calderaforms.com/pro?utm_source=caldera-space" class="btn" style="width: 100%">Sign Up</a>
                         </div>
 
                     </div>
@@ -266,7 +272,7 @@
                             <li class="list-group-item"><i class="icon-ok text-success"></i>Up To 5,000 PDFs A Month</li>
                         </ul>
                         <div class="panel-footer">
-                            <a href="/subscription/join" class="btn" style="width: 100%">Sign Up</a>
+                            <a href="https://calderaforms.com/pro?utm_source=caldera-space" class="btn" style="width: 100%">Sign Up</a>
                         </div>
 
                     </div>
