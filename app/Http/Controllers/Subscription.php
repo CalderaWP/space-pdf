@@ -76,6 +76,7 @@ class Subscription extends Controller
 	public function index()
 	{
 
+		return redirect( 'https://calderaforms.com/pro' );
 		$this->user = Auth::user();
 		$clientToken = ClientToken::generate();
 
