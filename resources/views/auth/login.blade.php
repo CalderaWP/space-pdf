@@ -7,6 +7,11 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Login</div>
                 <div class="panel-body">
+                    <div class="container">
+                        <p class="alert alert-danger">
+                            <a href="https://calderaforms.com/pro?utm_source=caldera-space">Caldera Forms Pro</a> is here! Caldera Forms to PDF services are now offered by Caldera Forms Pro and are way better! Existing users of Caldera Forms Pro have received a special cross-grade offer.
+                        </p>
+                    </div>
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
                         {{ csrf_field() }}
 
